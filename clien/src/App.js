@@ -18,7 +18,7 @@ export class App extends Component {
         const formdata = new FormData();
         formdata.append('file', e.target.files[0]);
 
-        await axios.post('http://localhost:5000/uploadimg', formdata).then(res => {
+        await axios.post('https://imgsegbackend.herokuapp.com/uploadimg', formdata).then(res => {
           if (res.data.data == "") {
             this.setState({ err: res.data.status })
             this.setState({ loading: 2 })
